@@ -16,3 +16,27 @@ const todos = [
   new Todo('Hello world 3', false, 2),
   new Todo('Hello world 4', false, 3),
 ];
+
+function populate() {
+  todos.sort((a, b) => (a.index > b.index ? 1 : -1));
+  todos.forEach((todo) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+    <div class="flex">
+      <div>
+          <input type="checkbox">
+          <span>${todo.description}</span>
+      </div>
+      <span class="material-icons">
+          more_vert
+      </span>
+    </div>
+    <hr>`;
+
+    button.parentElement.insertBefore(li, button);
+  });
+}
+
+window.addEventListener('load', () => {
+  populate();
+});
