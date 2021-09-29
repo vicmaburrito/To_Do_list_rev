@@ -27,9 +27,6 @@ function populate() {
           <input type="checkbox">
           <span>${todo.description}</span>
       </div>
-      <span class="material-icons">
-          more_vert
-      </span>
     </div>
     <hr>`;
 
