@@ -25,17 +25,31 @@ function populate() {
     li.innerHTML = `
     <div class="flex">
       <div>
-      <input type="checkbox" class="form-check-input" 
-      ${todo.completed ? 'checked' : ''}>
-      <span>${todo.description}</span>
+          <input type="checkbox" class="checkbox" 
+          ${todo.completed ? 'checked' : ''}>
+          <span>${todo.description}</span>
       </div>
       <span class="material-icons">
-      more_vert
+          more_vert
       </span>
     </div>
     <hr>`;
 
     button.parentElement.insertBefore(li, button);
+  });
+}
+
+function saveTodosLocally() {
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function addEventsToCheckboxes() {
+  const checkboxes = document.querySelectorAll('.checkbox');
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener('change', () => {
+      update(todos[index]);
+      saveTodosLocally();
+    });
   });
 }
 
