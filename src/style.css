@@ -11,7 +11,7 @@ body {
 
 #complete-list {
   background-color: #85929e;
-  margin: 10% 10%;
+  margin: 10% 25%;
 }
 
 #todo-items {
@@ -37,11 +37,13 @@ button {
 hr {
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 input[type='text'] {
   width: 100%;
   height: 100%;
+  padding: 8px;
   border: none;
 }
 
@@ -49,10 +51,15 @@ input[type='text']:focus {
   outline: none;
 }
 
-input[type='text']:placeholder-shown {
-  font-style: italic;
+.material-icons {
+  padding: 5px;
+  color: black;
+  font-size: 26px;
 }
 
-.material-icons {
-  color: grey;
+.items span {
+  color: rgb(28, 40, 51);
+  font-size: 20px;
+  font-weight: 900;
+  padding: 10px;
 }
