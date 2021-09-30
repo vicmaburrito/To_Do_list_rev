@@ -10,7 +10,7 @@ class Todo {
   }
 }
 
-const todos = [
+let todos = [
   new Todo('Hello world 1', false, 0),
   new Todo('Hello world 2', false, 1),
   new Todo('Hello world 5', false, 4),
@@ -25,8 +25,9 @@ function populate() {
     li.innerHTML = `
     <div class="flex">
       <div>
-          <input type="checkbox">
-          <span>${todo.description}</span>
+      <input type="checkbox" class="checkbox" 
+      ${todo.completed ? 'checked' : ''}>
+      <span>${todo.description}</span>
       </div>
     </div>
     <hr>`;
