@@ -25,10 +25,13 @@ function populate() {
     li.innerHTML = `
     <div class="flex">
       <div>
-      <input type="checkbox" class="checkbox" 
+      <input type="checkbox" class="form-check-input" 
       ${todo.completed ? 'checked' : ''}>
       <span>${todo.description}</span>
       </div>
+      <span class="material-icons">
+      more_vert
+      </span>
     </div>
     <hr>`;
 
@@ -37,5 +40,10 @@ function populate() {
 }
 
 window.addEventListener('load', () => {
+  const oldTodos = JSON.parse(localStorage.getItem('todos'));
+  if (oldTodos) {
+    todos = oldTodos;
+  }
   populate();
+  addEventsToCheckboxes();
 });
