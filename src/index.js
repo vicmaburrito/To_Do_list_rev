@@ -1,4 +1,5 @@
 import './style.css';
+import update from './update.js';
 
 const button = document.querySelector('button');
 class Todo {
