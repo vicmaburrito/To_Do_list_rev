@@ -1,5 +1,6 @@
 import './style.css';
 import update from './update.js';
+import { createTodo, destroyTodo, updateTodo } from './controller.js';
 
 const button = document.querySelector('button');
 class Todo {
@@ -10,13 +11,7 @@ class Todo {
   }
 }
 
-let todos = [
-  new Todo('Hello world 1', false, 0),
-  new Todo('Hello world 2', false, 1),
-  new Todo('Hello world 5', false, 4),
-  new Todo('Hello world 3', false, 2),
-  new Todo('Hello world 4', false, 3),
-];
+let todos = [];
 
 function populate() {
   todos.sort((a, b) => (a.index > b.index ? 1 : -1));
