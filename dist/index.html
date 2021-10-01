@@ -3,28 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+           rel="stylesheet">
         <title>Todo List</title>
     <script defer src="main.js"></script></head>
     <body>
-      <container>
         <section>
             <ul id="complete-list">
                 <li class="top-list-item">
-                    <div class="d-flex items">
+                    <div class="flex items">
                         <span>Today's Todo</span>
+                        <span class="material-icons">check_circle</span>
                     </div>
                     <hr>
                 </li>
 
                 <li class="top-list-item">
                     <div class="flex">
-                        <input placeholder="Add something To Do" type="text">
+                        <input id="input" placeholder="Add something To Do" type="text">
+                        <span class="material-icons">
+                            keyboard_return
+                        </span>
                     </div>
                     <hr>
                 </li>
                 <li id="button-li"><button type="button">Clear All Done's</button></li>
             </ul>
         </section>
-      </container>
     </body>
 </html> 

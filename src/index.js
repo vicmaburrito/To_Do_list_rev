@@ -16,7 +16,7 @@ let todos = [];
 function createTodoItem(todo) {
   const li = document.createElement('li');
   li.innerHTML = `
-    <div class="flex">
+    <div class="flex todo-element">
       <div>
           <input type="checkbox" class="checkbox" 
           ${todo.completed ? 'checked' : ''}>
