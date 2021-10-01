@@ -30,6 +30,18 @@ function createTodoItem(todo) {
   return li;
 }
 
+function addTodoItem(todo) {
+  const li = createTodoItem(todo);
+  button.parentElement.insertBefore(li, button);
+}
+
+function populate() {
+  todos.sort((a, b) => (a.index > b.index ? 1 : -1));
+  todos.forEach((todo) => {
+    addTodoItem(todo);
+  });
+}
+
 function saveTodosLocally() {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
