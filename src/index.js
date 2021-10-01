@@ -13,25 +13,21 @@ class Todo {
 
 let todos = [];
 
-function populate() {
-  todos.sort((a, b) => (a.index > b.index ? 1 : -1));
-  todos.forEach((todo) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
+function createTodoItem(todo) {
+  const li = document.createElement('li');
+  li.innerHTML = `
     <div class="flex">
       <div>
           <input type="checkbox" class="checkbox" 
           ${todo.completed ? 'checked' : ''}>
           <span>${todo.description}</span>
       </div>
-      <span class="material-icons">
+      <span class="material-icons edit-icon" style="cursor: pointer">
           more_vert
       </span>
     </div>
     <hr>`;
-
-    button.parentElement.insertBefore(li, button);
-  });
+  return li;
 }
 
 function saveTodosLocally() {
